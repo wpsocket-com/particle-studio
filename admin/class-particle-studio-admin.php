@@ -61,7 +61,7 @@ class Particle_Studio_Admin {
 		add_submenu_page( 'particlestudio', 'Template Editor', 'Template Editor', 'manage_options', 'template-editor');
 		add_submenu_page( 'particlestudio', 'Content Editor', 'Content Editor', 'manage_options', 'content-editor');
 		add_submenu_page( 'particlestudio', 'Image Marketplace', 'Image Marketplace', 'manage_options', 'image-marketplace');
-		add_submenu_page( 'particlestudio', 'Font Marketplace', 'Font Marketplace', 'manage_options', 'font-marketplace');
+		add_submenu_page( 'particlestudio', 'Font Marketplace add', 'Font Marketplace', 'manage_options', 'font-marketplace');
 
 	}
 
