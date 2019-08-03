@@ -1,0 +1,128 @@
+body{
+	overflow:hidden;
+}
+.sidebar-top {
+	background-color: #555;
+	width: 100%;
+	height: 28px;
+	overflow: auto;
+	top: 0px;
+	position: fixed;
+	z-index: 1000;
+}
+
+.sidebar-top a {
+	float: left;
+	display: block;
+	width: 48px;
+	text-align: center;
+	padding: 2px 0;
+	--transition: all 0.3s ease;
+	color: grey;
+	font-size: 16px;
+}
+
+.sidebar-bottom {
+	background-color: #555;
+	width: 100%;
+	height: 28px;
+	overflow: auto;
+	position: fixed;
+	bottom: 0px;
+	z-index: 1000;
+}
+
+.sidebar-bottom a {
+	float: left;
+	display: block;
+	width: 48px;
+	text-align: center;
+	padding: 2px 0;
+	--transition: all 0.3s ease;
+	color: grey;
+	font-size: 16px;
+}
+
+.sidebar-top a:hover,
+.sidebar-bottom a:hover {
+	background-color: #000;
+	color: white;
+}
+
+.sidebar-top .active,
+.sidebar-bottom .active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.editor-container {
+	top: 28px;
+	position: relative;
+	height: calc(100% - 28px);
+
+}
+
+.visual-editor {
+	visibility: hidden;
+	margin-top: 28px;
+}
+
+.html-editor {
+	visibility: hidden;
+	margin-top: 28px;
+}
+
+.css-editor {
+	visibility: hidden;
+	margin-top: 28px;
+}
+
+.js-editor {
+	visibility: hidden;
+	margin-top: 28px;
+}
+
+
+		/* Added by istiyak */
+.editor-container::-webkit-scrollbar {
+width: 6px;
+cursor: pointer;
+}
+.editor-container::-webkit-scrollbar-thumb {
+background: rgba(0, 0, 0, 0.5);
+border-radius: 4px;
+}
+.editor-container::-webkit-scrollbar-button {}
+.editor-container::-webkit-scrollbar-track {}
+.editor-container::-webkit-scrollbar-track-piece {}
+.editor-container::-webkit-scrollbar-corner {}
+.editor-container::-webkit-resizer {}
+
+.editor-container {
+width: 100%;
+xheight: 600px;
+xheight: calc(100% - 28px); /*EKNOYON*/
+overflow: auto;
+}
+
+.highlightElement{
+	/*NO! border: 1px dashed blue;*/
+	outline: 1px dashed blue;
+}
+
+.selectElement{
+	/*NO! border: 1px dashed blue;*/
+	outline: 1px solid blue;
+}
+
+.editor-container .dropdown-menu{
+	font-size: .75rem;
+}
+
+.editor-container .dropdown-item, .editor-container .dropdown-divider{
+	padding: .05rem .5rem;
+}
+
+.dropdown-menu a:hover{
+	background-color: #eee;
+}
