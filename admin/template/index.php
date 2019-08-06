@@ -1,4 +1,5 @@
-<?php echo ob_start(); ?>
+<?php 
+//require( "http://" . $_SERVER['SERVER_NAME'] . "/wp-load.php" ); ?>
 <!doctype html>
 <html lang="en">
 
@@ -161,8 +162,3 @@
 </body>
 
 </html>
-
-<?php 
-// code 
-ob_end_flush();
-ob_get_clean() ?>

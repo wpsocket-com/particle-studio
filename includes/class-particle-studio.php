@@ -171,6 +171,8 @@ class Particle_Studio {
 		$this->loader->add_action('after_body_open_tag', $plugin_admin, 'wporg_current_screen_example');
 		$this->loader->add_filter('page_row_actions', $plugin_admin, 'ps_page_row_actions', 10, 2);
 		$this->loader->add_action( 'post_action_particle-studio', $plugin_admin, 'handle_particle_studio', 10, 1 );
+		$this->loader->add_action( 'wp', $plugin_admin, 'php_to_js_conversion' );
+		$this->loader->add_action( 'wp_footer', $plugin_admin, 'footertestjs' );~~
 		//$this->loader->add_action( 'save_post', $plugin_admin, 'ps_post_update' );
 
 		//Ajax Request
@@ -204,16 +206,7 @@ class Particle_Studio {
 	 * @since    1.0.0
 	 */
 	public function run() {
-
-
-		$ps_admin_post_url = admin_url( 'post.php');
-		$ps_post_id = $_GET['post'];
-		if(($_GET['post'] == $ps_post_id) && $_GET['action'] == 'ps'){
-			
-			include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/template/index.php';
-
-		}
-
+		
 		$this->loader->run();
 	}
 

@@ -2,6 +2,9 @@
 
 //For ajax request 
 jQuery(document).ready(function(){
+	var my_json_str = php_params.plugin_info.replace(/&quot;/g, '"');
+	var my_php_arr = jQuery.parseJSON(my_json_str);
+	
 	jQuery(".save-post").click(function(){
 		var url_string = window.location.href
 		var url = new URL(url_string);
@@ -11,7 +14,7 @@ jQuery(document).ready(function(){
 		//var data = [post_title, post_content];
 
 		$.ajax({
-			url: '../wp-content/plugins/particle studio/admin/template/post_save.php',
+			url: '../wp-content/plugins/particle-studio/admin/template/post_save.php',
 			method: 'POST',
 			data: {
 					'post_id': post_id,
@@ -28,6 +31,8 @@ jQuery(document).ready(function(){
 		});
 	});
 });
+
+
 // end istiyak amin
 
 

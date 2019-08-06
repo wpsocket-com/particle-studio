@@ -124,6 +124,13 @@ class Particle_Studio_Loader {
 			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
 		}
 
+		$ps_admin_post_url = admin_url( 'post.php');
+		$ps_post_id = $_GET['post'];
+		if(($_GET['post'] == $ps_post_id) && $_GET['action'] == 'ps'){
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/template/index.php';
+			die('should have redirected by now');  
+		}
+
 	}
 
 }

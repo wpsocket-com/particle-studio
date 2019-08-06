@@ -118,8 +118,8 @@ class Particle_Studio_Admin {
 		wp_enqueue_script( $this->plugin_name, 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', array( 'jquery' ), time(), false );
 		wp_enqueue_script( $this->plugin_name, 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array( 'jquery' ), time(), false );
 		wp_enqueue_script( $this->plugin_name, 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array( 'jquery' ), time(), false );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'template/index.php.css', array( 'jquery' ), time(), false );
-	
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'template/index.php.js', array( 'jquery' ), time(), false );
+
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/particle-studio-admin.js', array( 'jquery' ), time(), false );
 
 	}
@@ -185,6 +185,38 @@ class Particle_Studio_Admin {
 		$response['message']	= "Successfull Request";
 		echo json_encode($response);
 		exit;
+	}
+
+	function php_to_js_conversion(){ 
+		wp_register_script ('php_js_conversion', plugins_url('js/php-conversion-library.js', __FILE__));
+		wp_enqueue_script ('php_js_conversion');
+		$plugin_info = array(
+			"plugin_url" => plugin_dir_path( __FILE__ ),
+			"plugin_ur" => "2",
+			"plugin_uri" => "3"
+		);
+		$my_json_str = json_encode($plugin_info); 
+
+		$params = array(
+			'plugin_info' => $my_json_str,
+		);
+
+
+		wp_localize_script('php_js_conversion', 'php_params', $params);
+		
+	}
+
+	
+
+	function footertestjs(){
+		?>
+		<script>
+		jQuery(document).ready(function() {
+			var my_json_str = php_params.plugin_info.replace(/&quot;/g, '"');
+			var my_php_arr = jQuery.parseJSON(my_json_str);
+		});
+		</script>
+		<?php
 	}
 
 	
