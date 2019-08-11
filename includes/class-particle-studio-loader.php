@@ -128,7 +128,7 @@ class Particle_Studio_Loader {
 		$ps_post_id = $_GET['post'];
 		if(($_GET['post'] == $ps_post_id) && $_GET['action'] == 'ps'){
 			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/template/index.php';
-			die('should have redirected by now');  
+			die();  
 		}
 
 	}
