@@ -37,7 +37,6 @@ jQuery(document).ready(function(){
 
 	jQuery(".left-sidebar").click(function(){
 		var length_check = document.getElementById("leftSidebar").style.width.length;
-		console.log(length_check);
 		if(length_check > 0){
 			closeLeftSidebar();
 		} else {
@@ -575,5 +574,17 @@ $(document).ready(function() {
 	*/
 });
 
+
+
+// Drag and Drop start
+dragula([document.getElementById('leftSidebar'), document.getElementById('postContent')], {
+	copy: function (el, source) {
+	  return source === document.getElementById('leftSidebar')
+	},
+	accepts: function (el, target) {
+	  return target !== document.getElementById('leftSidebar')
+	}
+  }); 
+// Drag and Drop end
 
 

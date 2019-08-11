@@ -1,5 +1,3 @@
-<?php 
-//require( "http://" . $_SERVER['SERVER_NAME'] . "/wp-load.php" ); ?>
 <!doctype html>
 <html lang="en">
 
@@ -12,10 +10,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>assets/css/dragula.min.css">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>/index.php.css">
 	<title>Hello, world!</title> 
-	<style>
+	<style>	
 		#loading{
 			position: absolute;
 			background: #fff;
@@ -37,10 +36,12 @@
 			//var_dump($get_post_data);?>
 
 	<div id="leftSidebar" class="sidebar-left">
-		<a href="#">About</a>
-		<a href="#">Services</a>
-		<a href="#">Clients</a>
-		<a href="#">Contact</a>
+		<div>When elements are copyable, they can't be sorted in their origin container</div>
+		<div>Copying prevents original elements from being dragged. A copy gets created and <em>that</em> gets dragged instead</div>
+		<div>Whenever that happens, a <code>cloned</code> event is raised</div>
+		<div>Note that the clones get destroyed if they're not dropped into another container</div>
+		<div>You'll be dragging a copy, so when they're dropped into another container you'll see the duplication.</div>
+          
 	</div>
 
 
@@ -100,8 +101,9 @@
 				<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 					<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
 					<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
-					<div class="post-content">
+					<div class="post-content" id="postContent~">
 					<?php echo $get_post_data->post_content ?>
+					</div>
 				</div>
 			</div>
 
@@ -183,7 +185,21 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src = "<?php echo plugin_dir_url( __FILE__ ) ?>/index.php.js" type="text/javascript"></script>
+	<script src = "<?php echo plugin_dir_url( __FILE__ ) ?>assets/js/dragula.min.js" type="text/javascript"></script>
+	<script src = "<?php echo plugin_dir_url( __FILE__ ) ?>index.php.js" type="text/javascript"></script>
+	<script>
+	// Drag and Drop start
+dragula([document.getElementById('leftSidebar'), document.getElementsByClassName('post-content')], {
+	copy: function (el, source) {
+	  return source === document.getElementById('leftSidebar')
+	},
+	accepts: function (el, target) {
+	  return target !== document.getElementById('leftSidebar')
+	}
+  }); 
+// Drag and Drop end
+</script>
 </body>
 
 </html>
+
