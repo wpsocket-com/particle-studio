@@ -15,7 +15,7 @@ jQuery(document).ready(function(){
 			url: '../wp-content/plugins/particle-studio/admin/template/post_save.php',
 			method: 'POST',
 			beforeSend: function(){
-
+				$("#loading").css("display", "block");
 			},
 			data: {
 					'post_id': post_id,
@@ -26,7 +26,9 @@ jQuery(document).ready(function(){
 			success: function() {
 				message("post save successfully");
 			},
-			complete: function(){},
+			complete: function(){
+				$("#loading").css("display", "none");
+			},
 			error: function( error ) {
 				console.log( error );
 			}

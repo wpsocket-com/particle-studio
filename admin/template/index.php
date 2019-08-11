@@ -15,10 +15,24 @@
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>/index.php.css">
 	<title>Hello, world!</title> 
+	<style>
+		#loading{
+			position: absolute;
+			background: #fff;
+			width: 100%;
+			height: 100%;
+			display: none;
+			opacity: 1;
+			background-image: url("<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/spinner.gif");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	</style>
 </head>
 
 <body>
 <div id="message"></div>
+<div id="loading"></div>
 <?php $get_post_data = get_post($ps_post_id);
 			//var_dump($get_post_data);?>
 
