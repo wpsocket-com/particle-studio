@@ -36,6 +36,13 @@
 <?php $get_post_data = get_post($ps_post_id);
 			//var_dump($get_post_data);?>
 
+	<div id="leftSidebar" class="sidebar-left">
+		<a href="#">About</a>
+		<a href="#">Services</a>
+		<a href="#">Clients</a>
+		<a href="#">Contact</a>
+	</div>
+
 
     <div class="sidebar-top">
         <a class="xactive" href="#" title="Home"><i class="fa fa-home"></i></a>
@@ -44,6 +51,7 @@
         <a href="#"><i class="fa fa-globe"></i></a>
 
 		<a class="save-post" href="#"><i class="fa fa-floppy-o"></i></a>
+		<a class="left-sidebar" href="#"><i class="fa fa-bars"></i></a>
         <a style="float:right" href="#"><i class="fa fa-trash"></i></a>
     </div>
     <!--
@@ -87,79 +95,81 @@
 			<a class="dropdown-item" href="#">Edit (Visual)</a>
 			<a class="dropdown-item" href="#">Edit (Code)</a>
 		</div>
-        <div class = "visual-editor" contenteditable>
-			<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-				<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
-				<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
-				<div class="post-content">
-				<?php echo $get_post_data->post_content ?>
+		<div id="main">
+			<div class = "visual-editor" contenteditable>
+				<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+					<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
+					<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
+					<div class="post-content">
+					<?php echo $get_post_data->post_content ?>
+				</div>
+			</div>
+
+	<!--
+				<div class="container">
+				<div class="card-deck mb-3 text-center">
+					<div class="card mb-4 shadow-sm">
+					<div class="card-header">
+						<h4 class="my-0 font-weight-normal">Free</h4>
+					</div>
+					<div class="card-body">
+						<h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+						<ul class="list-unstyled mt-3 mb-4">
+						<li>10 users included</li>
+						<li>2 GB of storage</li>
+						<li>Email support</li>
+						<li>Help center access</li>
+						</ul>
+						<button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+					</div>
+					</div>
+					<div class="card mb-4 shadow-sm">
+					<div class="card-header">
+						<h4 class="my-0 font-weight-normal">Pro</h4>
+					</div>
+					<div class="card-body">
+						<h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+						<ul class="list-unstyled mt-3 mb-4">
+						<li>20 users included</li>
+						<li>10 GB of storage</li>
+						<li>Priority email support</li>
+						<li>Help center access</li>
+						</ul>
+						<button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+					</div>
+					</div>
+					<div class="card mb-4 shadow-sm">
+					<div class="card-header">
+						<h4 class="my-0 font-weight-normal">Enterprise</h4>
+					</div>
+					<div class="card-body">
+						<h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+						<ul class="list-unstyled mt-3 mb-4">
+						<li>30 users included</li>
+						<li>15 GB of storage</li>
+						<li>Phone and email support</li>
+						<li>Help center access</li>
+						</ul>
+						<button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+					</div>
+					</div>
+				</div>
+				</div>
+	-->
+				<!-- -->
+			</div>
+			<div class = "html-editor">
+				<textarea id="html-editor-form" class="form-control" rows="5">
+					okk
+				</textarea>
+			</div>
+			<div class = "css-editor">
+				<p>css editor</p>
+			</div>
+			<div class = "js-editor">
+				<p>js editor</p>
 			</div>
 		</div>
-
-<!--
-			<div class="container">
-			<div class="card-deck mb-3 text-center">
-				<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Free</h4>
-				</div>
-				<div class="card-body">
-					<h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-					<ul class="list-unstyled mt-3 mb-4">
-					<li>10 users included</li>
-					<li>2 GB of storage</li>
-					<li>Email support</li>
-					<li>Help center access</li>
-					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-				</div>
-				</div>
-				<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Pro</h4>
-				</div>
-				<div class="card-body">
-					<h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-					<ul class="list-unstyled mt-3 mb-4">
-					<li>20 users included</li>
-					<li>10 GB of storage</li>
-					<li>Priority email support</li>
-					<li>Help center access</li>
-					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
-				</div>
-				</div>
-				<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Enterprise</h4>
-				</div>
-				<div class="card-body">
-					<h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-					<ul class="list-unstyled mt-3 mb-4">
-					<li>30 users included</li>
-					<li>15 GB of storage</li>
-					<li>Phone and email support</li>
-					<li>Help center access</li>
-					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
-				</div>
-				</div>
-			</div>
-			</div>
--->
-			<!-- -->
-        </div>
-        <div class = "html-editor">
-			<textarea id="html-editor-form" class="form-control" rows="5">
-				okk
-			</textarea>
-        </div>
-        <div class = "css-editor">
-			<p>css editor</p>
-        </div>
-        <div class = "js-editor">
-			<p>js editor</p>
-        </div>
     </div>
 
     <!--

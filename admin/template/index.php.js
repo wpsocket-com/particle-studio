@@ -24,7 +24,7 @@ jQuery(document).ready(function(){
 				},
 			crossDomain: true,
 			success: function() {
-				message("post save successfully");
+				message("Post save successfully");
 			},
 			complete: function(){
 				$("#loading").css("display", "none");
@@ -33,6 +33,16 @@ jQuery(document).ready(function(){
 				console.log( error );
 			}
 		});
+	});
+
+	jQuery(".left-sidebar").click(function(){
+		var length_check = document.getElementById("leftSidebar").style.width.length;
+		console.log(length_check);
+		if(length_check > 0){
+			closeLeftSidebar();
+		} else {
+			openLeftSidebar();
+		}
 	});
 
 	
@@ -45,12 +55,15 @@ function message(msg) {
 	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
 
-function loadingStart() {
-	
-}
-function loadingEnd() {
-	
-}
+function openLeftSidebar() {
+	document.getElementById("leftSidebar").style.width = "250px";
+	document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeLeftSidebar() {
+	document.getElementById("leftSidebar").style.width = null;
+	document.getElementById("main").style.marginLeft= null;
+  }
 
 // end istiyak amin
 
