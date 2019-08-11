@@ -18,6 +18,7 @@
 </head>
 
 <body>
+<div id="message"></div>
 <?php $get_post_data = get_post($ps_post_id);
 			//var_dump($get_post_data);?>
 

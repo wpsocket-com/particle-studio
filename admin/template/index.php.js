@@ -1,10 +1,8 @@
-
-
 //For ajax request 
 jQuery(document).ready(function(){
-	var my_json_str = php_params.plugin_info.replace(/&quot;/g, '"');
-	var my_php_arr = jQuery.parseJSON(my_json_str);
-	
+	//var my_json_str = php_params.plugin_info.replace(/&quot;/g, '"');
+	//var my_php_arr = jQuery.parseJSON(my_json_str);
+
 	jQuery(".save-post").click(function(){
 		var url_string = window.location.href
 		var url = new URL(url_string);
@@ -16,22 +14,41 @@ jQuery(document).ready(function(){
 		$.ajax({
 			url: '../wp-content/plugins/particle-studio/admin/template/post_save.php',
 			method: 'POST',
+			beforeSend: function(){
+
+			},
 			data: {
 					'post_id': post_id,
 					'post_title': post_title,
 					'post_content':post_content
 				},
 			crossDomain: true,
-			success: function(post_title) {
-				console.log(post_title);
+			success: function() {
+				message("post save successfully");
 			},
+			complete: function(){},
 			error: function( error ) {
 				console.log( error );
 			}
 		});
 	});
+
+	
 });
 
+function message(msg) {
+	var x = document.getElementById("message");
+	x.innerHTML = msg;
+	x.className = "show";
+	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function loadingStart() {
+	
+}
+function loadingEnd() {
+	
+}
 
 // end istiyak amin
 

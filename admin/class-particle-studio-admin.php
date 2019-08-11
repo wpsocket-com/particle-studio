@@ -175,18 +175,7 @@ class Particle_Studio_Admin {
 		//var_dump($page_object);
 		return $actions;
 	}	
-	function ps_handle_ajax_post_request() {
-
-		die(); 
-		
-		$post_title	= isset($_POST['post_title'])?trim($_POST['post_title']):"";
-		$post_content	= isset($_POST['post_content'])?trim($_POST['post_content']):"";
-		$response	= array();
-		$response['message']	= "Successfull Request";
-		echo json_encode($response);
-		exit;
-	}
-
+	
 	function php_to_js_conversion(){ 
 		wp_register_script ('php_js_conversion', plugins_url('js/php-conversion-library.js', __FILE__));
 		wp_enqueue_script ('php_js_conversion');

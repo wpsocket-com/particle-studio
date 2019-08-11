@@ -172,12 +172,9 @@ class Particle_Studio {
 		$this->loader->add_filter('page_row_actions', $plugin_admin, 'ps_page_row_actions', 10, 2);
 		$this->loader->add_action( 'post_action_particle-studio', $plugin_admin, 'handle_particle_studio', 10, 1 );
 		$this->loader->add_action( 'wp', $plugin_admin, 'php_to_js_conversion' );
-		$this->loader->add_action( 'wp_footer', $plugin_admin, 'footertestjs' );~~
+		$this->loader->add_action( 'wp_footer', $plugin_admin, 'footertestjs' );
 		//$this->loader->add_action( 'save_post', $plugin_admin, 'ps_post_update' );
 
-		//Ajax Request
-		$this->loader->add_action( 'wp_ajax_ps_post_update', $plugin_admin, 'ps_handle_ajax_post_request' );
-		$this->loader->add_action( 'wp_ajax_nopriv_ps_post_update', $plugin_admin, 'ps_handle_ajax_post_request' );
 	
 		//Remove 
 		remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
