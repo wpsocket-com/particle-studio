@@ -8,7 +8,7 @@ jQuery(document).ready(function(){
 		var url = new URL(url_string);
 		var post_id = url.searchParams.get("post");
 		var post_title = $(".post-title").html();
-		var post_content = $(".post-content").html();
+        var post_content = $(".post-content").html();
 		//var data = [post_title, post_content];
 
 		$.ajax({
@@ -24,6 +24,7 @@ jQuery(document).ready(function(){
 				},
 			crossDomain: true,
 			success: function() {
+                console.log(post_content);
 				message("Post save successfully");
 			},
 			complete: function(){

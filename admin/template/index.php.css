@@ -17,6 +17,7 @@ body{
 	left: 10%;
 	bottom: 35px;
 	font-size: 17px;
+	z-index: 99999;
   }
   
   #message.show {
@@ -50,6 +51,7 @@ body{
 
   
   .sidebar-left {
+	color: #fff;
 	height: 100%;
 	width: 0;
 	position: fixed;
@@ -61,6 +63,9 @@ body{
 	transition: 0.5s;
 	padding-top: 60px;
   }
+  #leftSidebar div {
+    border: 1px solid blue;
+	}
   
   .sidebar-left a {
 	padding: 8px 8px 8px 32px;
@@ -193,12 +198,12 @@ border-radius: 4px;
 .editor-container::-webkit-scrollbar-corner {}
 .editor-container::-webkit-resizer {}
 
-.editor-container {
+/* .editor-container {
 width: 100%;
-xheight: 600px;
-xheight: calc(100% - 28px); /*EKNOYON*/
-overflow: auto;
-}
+height: 600px;
+height: 100%;
+overflow: scroll;
+} */
 
 .highlightElement{
 	/*NO! border: 1px dashed blue;*/

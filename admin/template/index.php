@@ -17,7 +17,7 @@
 	<style>	
 		#loading{
 			position: absolute;
-			background: #fff;
+			background: rgba(255, 255, 255, 0.54);
 			width: 100%;
 			height: 100%;
 			display: none;
@@ -25,6 +25,7 @@
 			background-image: url("<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/spinner.gif");
 			background-repeat: no-repeat;
 			background-position: center;
+			z-index: 99999;
 		}
 	</style>
 </head>
@@ -101,7 +102,7 @@
 				<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 					<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
 					<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
-					<div class="post-content" id="postContent~">
+					<div class="post-content" id="postContent">
 					<?php echo $get_post_data->post_content ?>
 					</div>
 				</div>
