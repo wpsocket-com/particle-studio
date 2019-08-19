@@ -37,7 +37,7 @@
 	border-radius: 2px;
 	padding: 16px;
 	position: fixed;
-	z-index: 1;
+	z-index: 9999999;
 	left: 10%;
 	bottom: 35px;
 	font-size: 17px;
@@ -181,10 +181,12 @@
 .editor-container {	
 	position: relative;
 	height: calc(100% - 28px);
+	padding: 20px;
 
 }
 
 .visual-editor {
+	margin-top: 28px;
 	visibility: hidden;	
 }
 

@@ -24,7 +24,7 @@ jQuery(document).ready(function(){
 				},
 			crossDomain: true,
 			success: function() {
-                console.log(post_content);
+                //console.log(post_content);
 				message("Post save successfully");
 			},
 			complete: function(){
@@ -65,6 +65,11 @@ function openLeftSidebar() {
 	document.getElementById("main").style.marginLeft= null;
   }
 
+
+$(".para-bar").click(function (e) { 
+	e.preventDefault();
+	console.log("hello");
+});
 // end istiyak amin
 
 

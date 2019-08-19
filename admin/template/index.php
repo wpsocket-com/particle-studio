@@ -12,7 +12,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>assets/css/dragula.min.css">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>/index.php.css?v=<?php echo $dev_ver; ?>">
 	<title>Hello, world!</title> 
@@ -57,7 +56,9 @@
 		<a class="save-post" href="#"><i class="fa fa-floppy-o"></i></a>
 		<a class="left-sidebar" href="#"><i class="fa fa-bars"></i></a>
         <a style="float:right" href="#"><i class="fa fa-trash"></i></a>
-    </div>
+        <a class="para-bar" style="float:right" href="#"><i class="fa fa-level-down"></i></a>
+	</div>
+
 
     <div class="sidebar-bottom">
         <a id="sidebar-bottom-icon-left-menu" class="xactive" href="#"><i class="fa fa-home"></i></a>
@@ -86,13 +87,16 @@
 		</div>
 		<div id="main">
 				<div class = "visual-editor" contenteditable>
-					<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+					<div class="text-center">
 						<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
-						<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
-						<div class="post-content" id="postContent">
-						<?php echo $get_post_data->post_content ?>
-						</div>
+						<hr>
 					</div>
+					
+					<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
+					<div class="post-content" id="postContent">
+					<?php echo $get_post_data->post_content ?>
+					</div>
+					
 				</div>
 
 	<!--
@@ -173,20 +177,8 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src = "<?php echo plugin_dir_url( __FILE__ ) ?>assets/js/dragula.min.js" type="text/javascript"></script>
 	<script src = "<?php echo plugin_dir_url( __FILE__ ) ?>index.php.js?v=<?php echo $dev_ver; ?>" type="text/javascript"></script>
-	<script>
-	// Drag and Drop start
-dragula([document.getElementById('leftSidebar'), document.getElementsByClassName('post-content')], {
-	copy: function (el, source) {
-	  return source === document.getElementById('leftSidebar')
-	},
-	accepts: function (el, target) {
-	  return target !== document.getElementById('leftSidebar')
-	}
-  }); 
-// Drag and Drop end
-</script>
+
 </body>
 
 </html>
