@@ -122,7 +122,40 @@
 	.sidebar-left a {font-size: 18px;}
   }
 /* LeftSidebar Expand End */
-
+/* Paragraph Bar area Start */
+#paraArea {
+	color: #fff;
+	height: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow: hidden;
+	transition: 0.5s;
+	margin-top: 28px;
+  }
+  #paraArea div {
+	float: left;
+	padding: 0 10px;
+    border: 1px solid blue;
+	}
+  
+  .paraArea a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+  }
+  
+  .paraArea a:hover {
+	color: #f1f1f1;
+  }
+  
+/* Paragraph Bar area End */
 
 .sidebar-top {
 	background-color: #555;
@@ -178,7 +211,8 @@
 	color: white;
 }
 
-.editor-container {	
+.editor-container {
+	margin-top: 28px;	
 	position: relative;
 	height: calc(100% - 28px);
 	padding: 20px;
@@ -187,6 +221,7 @@
 
 .visual-editor {
 	margin-top: 28px;
+	font-size: 16px;
 	visibility: hidden;	
 }
 

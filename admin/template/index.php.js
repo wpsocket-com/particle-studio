@@ -68,8 +68,75 @@ function openLeftSidebar() {
 
 $(".para-bar").click(function (e) { 
 	e.preventDefault();
-	console.log("hello");
+	let length_check = document.getElementById("paraArea").style.height.length;
+	if(length_check > 0){
+		closeParaBar();
+	} else {
+		openParaBar();
+	}
 });
+
+function openParaBar() {
+	document.getElementById("paraArea").style.height = "28px";
+  }
+  
+function closeParaBar() {
+	document.getElementById("paraArea").style.height = null;
+}
+
+var tg_fs_value = $(".visual-editor").css("font-size");
+var tg_padd_value = $(".visual-editor").css("padding");
+var tg_mar_value = $(".visual-editor").css("margin");
+var tg_bor_value = $(".visual-editor").css("border");
+var tg_al_value = $(".visual-editor").css("text-align");
+var tg_col_value = $(".visual-editor").css("color");
+var tg_bg_value = $(".visual-editor").css("background");
+$(".tg-fs").val(tg_fs_value);
+$(".tg-pad").val(tg_padd_value);
+$(".tg-mar").val(tg_mar_value);
+$(".tg-bor").val(tg_bor_value);
+$(".tg-al").val(tg_al_value);
+$(".tg-col").val(tg_col_value);
+$(".tg-bg").val(tg_bg_value);
+
+
+
+$(".tg-fs").on("change", function(){
+	var cur_tg_fs_value = $(".tg-fs").val();
+	$(".visual-editor").css("font-size", cur_tg_fs_value);
+});
+
+$(".tg-pad").on("change", function(){
+	var cur_tg_pad_value = $(".tg-fs").val();
+	$(".visual-editor").css("padding", cur_tg_pad_value);
+});
+
+$(".tg-mar").on("change", function(){
+	var cur_tg_mar_value = $(".tg-mar").val();
+	$(".visual-editor").css("margin", cur_tg_mar_value);
+});
+
+$(".tg-bor").on("change", function(){
+	var cur_tg_bor_value = $(".tg-bor").val();
+	$(".visual-editor").css("border", cur_tg_bor_value);
+});
+
+$(".tg-al").on("change", function(){
+	var cur_tg_al_value = $(".tg-al").val();
+	$(".visual-editor").css("text-align", cur_tg_al_value);
+});
+
+$(".tg-col").on("change", function(){
+	var cur_tg_col_value = $(".tg-col").val();
+	$(".visual-editor").css("color", cur_tg_col_value);
+});
+
+$(".tg-bg").on("change", function(){
+	var cur_tg_bg_value = $(".tg-bg").val();
+	$(".visual-editor").parent().css("background", cur_tg_bg_value);
+});
+
+
 // end istiyak amin
 
 
@@ -579,18 +646,5 @@ $(document).ready(function() {
 	history.save();
 	*/
 });
-
-
-
-// Drag and Drop start
-dragula([document.getElementById('leftSidebar'), document.getElementById('postContent')], {
-	copy: function (el, source) {
-	  return source === document.getElementById('leftSidebar')
-	},
-	accepts: function (el, target) {
-	  return target !== document.getElementById('leftSidebar')
-	}
-  }); 
-// Drag and Drop end
 
 

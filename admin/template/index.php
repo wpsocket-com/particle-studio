@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>/index.php.css?v=<?php echo $dev_ver; ?>">
 	<title>Hello, world!</title> 
 	<style>	
-		#loading{
+		#loading {
 			position: absolute;
 			background: rgba(255, 255, 255, 0.54);
 			width: 100%;
@@ -59,6 +59,17 @@
         <a class="para-bar" style="float:right" href="#"><i class="fa fa-level-down"></i></a>
 	</div>
 
+	<div id="paraArea" class="">
+		<div>CSS STYLE::</div>
+		<div><input class="tg-fs" type="text" style="width: 100px; height: 25px" placeholder="Font-size"></div>
+		<div><input class="tg-padd" type="text" style="width: 100px; height: 25px" placeholder="Padding"></div>
+		<div><input class="tg-mar" type="text" style="width: 100px; height: 25px" placeholder="Margin"></div>
+		<div><input class="tg-bor" type="text" style="width: 100px; height: 25px" placeholder="Border"></div>
+		<div><input class="tg-al" type="text" style="width: 100px; height: 25px" placeholder="Align"></div>
+		<div><input class="tg-col" type="text" style="width: 100px; height: 25px" placeholder="Color"></div>
+		<div><input class="tg-bg" type="text" style="width:100px; height: 25px" placeholder="Background"></div>
+	</div>
+
 
     <div class="sidebar-bottom">
         <a id="sidebar-bottom-icon-left-menu" class="xactive" href="#"><i class="fa fa-home"></i></a>
@@ -86,15 +97,14 @@
 			<a class="dropdown-item" href="#">Edit (Code)</a>
 		</div>
 		<div id="main">
-				<div class = "visual-editor" contenteditable>
-					<div class="text-center">
-						<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
-						<hr>
-					</div>
-					
+				<div class="text-center">
+					<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
+					<hr>
+				</div>	
 					<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
-					<div class="post-content" id="postContent">
-					<?php echo $get_post_data->post_content ?>
+				<div class="post-content" id="postContent">
+					<div class = "visual-editor" contenteditable>
+						<?php echo $get_post_data->post_content ?>
 					</div>
 					
 				</div>
