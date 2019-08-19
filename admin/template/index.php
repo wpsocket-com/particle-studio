@@ -3,6 +3,8 @@
 
 <head>
 
+<?php $dev_ver = time(); ?> 
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>assets/css/dragula.min.css">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>/index.php.css">
+    <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) ?>/index.php.css?v=<?php echo $dev_ver; ?>">
 	<title>Hello, world!</title> 
 	<style>	
 		#loading{
@@ -50,28 +52,13 @@
         <a class="xactive" href="#" title="Home"><i class="fa fa-home"></i></a>
         <a href="#" title="Undo"><i class="fa fa-undo"></i></a>
         <a href="#" title="Redo"><i class="fa fa-repeat"></i></a>
-        <a href="#"><i class="fa fa-globe"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-globe"></i></a>
 
 		<a class="save-post" href="#"><i class="fa fa-floppy-o"></i></a>
 		<a class="left-sidebar" href="#"><i class="fa fa-bars"></i></a>
         <a style="float:right" href="#"><i class="fa fa-trash"></i></a>
     </div>
-    <!--
-  <div class="sidebar left">
-    <a class="active" href="#"><i class="fa fa-home"></i></a> 
-    <a href="#"><i class="fa fa-search"></i></a> 
-    <a href="#"><i class="fa fa-envelope"></i></a> 
-    <a href="#"><i class="fa fa-globe"></i></a>
-    <a href="#"><i class="fa fa-trash"></i></a> 
-  </div>
-  <div class="sidebar right">
-    <a class="active" href="#"><i class="fa fa-home"></i></a> 
-    <a href="#"><i class="fa fa-search"></i></a> 
-    <a href="#"><i class="fa fa-envelope"></i></a> 
-    <a href="#"><i class="fa fa-globe"></i></a>
-    <a href="#"><i class="fa fa-trash"></i></a> 
-  </div>
-  -->
+
     <div class="sidebar-bottom">
         <a id="sidebar-bottom-icon-left-menu" class="xactive" href="#"><i class="fa fa-home"></i></a>
         <a id="sidebar-bottom-icon-visual-editor" href="#"><i class="fa fa-film"></i></a>
@@ -98,15 +85,15 @@
 			<a class="dropdown-item" href="#">Edit (Code)</a>
 		</div>
 		<div id="main">
-			<div class = "visual-editor" contenteditable>
-				<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-					<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
-					<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
-					<div class="post-content" id="postContent">
-					<?php echo $get_post_data->post_content ?>
+				<div class = "visual-editor" contenteditable>
+					<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+						<h1 class="post-title"><?php echo $get_post_data->post_title ?></h1>
+						<!-- <h1 class="display-4"><?php // echo $get_post_data->post_title ?></h1> -->
+						<div class="post-content" id="postContent">
+						<?php echo $get_post_data->post_content ?>
+						</div>
 					</div>
 				</div>
-			</div>
 
 	<!--
 				<div class="container">
@@ -160,7 +147,7 @@
 				</div>
 	-->
 				<!-- -->
-			</div>
+			
 			<div class = "html-editor">
 				<textarea id="html-editor-form" class="form-control" rows="5">
 					okk
@@ -187,7 +174,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src = "<?php echo plugin_dir_url( __FILE__ ) ?>assets/js/dragula.min.js" type="text/javascript"></script>
-	<script src = "<?php echo plugin_dir_url( __FILE__ ) ?>index.php.js" type="text/javascript"></script>
+	<script src = "<?php echo plugin_dir_url( __FILE__ ) ?>index.php.js?v=<?php echo $dev_ver; ?>" type="text/javascript"></script>
 	<script>
 	// Drag and Drop start
 dragula([document.getElementById('leftSidebar'), document.getElementsByClassName('post-content')], {

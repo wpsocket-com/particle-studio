@@ -1,6 +1,30 @@
-body{
-	overflow:hidden;
-}
+/* scorllbar start */
+
+::-webkit-scrollbar {
+	width: 10px;
+	margin-top: 28px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background: #555; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	border-radius: 10px;
+	background: #555; 
+  }
+/* scorllbar end*/
 
 /* Toast Message Start */
 #message {
@@ -17,7 +41,6 @@ body{
 	left: 10%;
 	bottom: 35px;
 	font-size: 17px;
-	z-index: 99999;
   }
   
   #message.show {
@@ -90,7 +113,7 @@ body{
   
   #main {
 	transition: margin-left .5s;
-	padding: 16px;
+	/* padding: 16px; */
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -155,16 +178,14 @@ body{
 	color: white;
 }
 
-.editor-container {
-	top: 28px;
+.editor-container {	
 	position: relative;
 	height: calc(100% - 28px);
 
 }
 
 .visual-editor {
-	visibility: hidden;
-	margin-top: 28px;
+	visibility: hidden;	
 }
 
 .html-editor {
@@ -182,46 +203,6 @@ body{
 	margin-top: 28px;
 }
 
-
-		/* Added by istiyak */
-.editor-container::-webkit-scrollbar {
-width: 6px;
-cursor: pointer;
-}
-.editor-container::-webkit-scrollbar-thumb {
-background: rgba(0, 0, 0, 0.5);
-border-radius: 4px;
-}
-.editor-container::-webkit-scrollbar-button {}
-.editor-container::-webkit-scrollbar-track {}
-.editor-container::-webkit-scrollbar-track-piece {}
-.editor-container::-webkit-scrollbar-corner {}
-.editor-container::-webkit-resizer {}
-
-/* .editor-container {
-width: 100%;
-height: 600px;
-height: 100%;
-overflow: scroll;
-} */
-
-.highlightElement{
-	/*NO! border: 1px dashed blue;*/
-	outline: 1px dashed blue;
-}
-
-.selectElement{
-	/*NO! border: 1px dashed blue;*/
-	outline: 1px solid blue;
-}
-
-.editor-container .dropdown-menu{
-	font-size: .75rem;
-}
-
-.editor-container .dropdown-item, .editor-container .dropdown-divider{
-	padding: .05rem .5rem;
-}
 
 .dropdown-menu a:hover{
 	background-color: #eee;

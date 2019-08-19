@@ -105,7 +105,7 @@ class ParticleStudioController {
 	*/
 	init(){
 		$('.visual-editor')[0].style.visibility = 'visible';
-		$('.editor-container').height($('.editor-container').height()-28);
+		//$('.editor-container').height($('.editor-container').height()-28);
 
 	}
 
