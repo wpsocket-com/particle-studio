@@ -106,7 +106,6 @@
 					<div class = "visual-editor" contenteditable>
 						<?php echo $get_post_data->post_content ?>
 					</div>
-					
 				</div>
 
 	<!--

@@ -222,8 +222,10 @@
 .visual-editor {
 	margin-top: 28px;
 	font-size: 16px;
-	visibility: hidden;	
+	visibility: hidden;
 }
+
+
 
 .html-editor {
 	visibility: hidden;
